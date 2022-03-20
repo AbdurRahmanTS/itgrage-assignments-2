@@ -7,7 +7,7 @@ import { Container } from "@mui/material";
 
 const Header = () => {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Box
         sx={{
           display: "flex",
