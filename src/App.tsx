@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import Header from "./Component/Header/Header";
-import WorksDetails from "./Component/WorksDetails/WorksDetails";
+import WorksDetailsInput from "./Component/WorksDetailsInput/WorksDetailsInput";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <WorksDetails />
+      <WorksDetailsInput />
     </div>
   );
 }

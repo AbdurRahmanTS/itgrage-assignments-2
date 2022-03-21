@@ -1,14 +1,8 @@
 import React from "react";
-import { Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import WorksDetailsInput from "../WorksDetailsInput/WorksDetailsInput";
+import { TableBody } from "@mui/material";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -30,48 +24,27 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-// function createData(
-//   name: string,
-//   calories: number,
-//   fat: number,
-//   carbs: number,
-//   protein: number
-// ) {
-//   return { name, calories, fat, carbs, protein };
-// }
+interface IProps {
+  date: string;
+  taskNumber: number;
+  workAction: string;
+  time: number;
+  id?: number;
+}
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-const WorksDetails = () => {
+const WorksDetails = ({ date, taskNumber, workAction, time }: IProps) => {
   return (
-    <Container maxWidth="md" style={{marginTop:"20px"}}>
-      <div>
-        <WorksDetailsInput />
-      </div>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Date</StyledTableCell>
-              <StyledTableCell align="right">Task Number</StyledTableCell>
-              <StyledTableCell align="right">Work Action</StyledTableCell>
-              <StyledTableCell align="right">Time</StyledTableCell>
-              <StyledTableCell align="right">Action</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <StyledTableRow>
-              <StyledTableCell component="th" scope="row">
-                name
-              </StyledTableCell>
-              <StyledTableCell align="right">A</StyledTableCell>
-              <StyledTableCell align="right">B</StyledTableCell>
-              <StyledTableCell align="right">C</StyledTableCell>
-              <StyledTableCell align="right">D</StyledTableCell>
-            </StyledTableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Container>
+    <TableBody>
+      <StyledTableRow>
+        <StyledTableCell component="th" scope="row">
+          {date}
+        </StyledTableCell>
+        <StyledTableCell align="right">{taskNumber}</StyledTableCell>
+        <StyledTableCell align="right">{workAction}</StyledTableCell>
+        <StyledTableCell align="right">{time}</StyledTableCell>
+        <StyledTableCell align="right">x</StyledTableCell>
+      </StyledTableRow>
+    </TableBody>
   );
 };
 
